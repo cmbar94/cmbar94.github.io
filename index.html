@@ -9,8 +9,6 @@
 <meta property="og:description" content="Projects in GIS development, water accounting, GeoAI and Earth observation.">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://cmbar94.github.io/">
-<meta property="og:image" content="https://cmbar94.github.io/assets/eastern-cape-et.webp">
-<link rel="icon" href="assets/eastern-cape-et.webp">
 <title>Simbarashe Mukanganyama | Geospatial Portfolio</title>
 <style>
 :root {
@@ -177,6 +175,8 @@ h2 { font-size: clamp(2.2rem, 4.7vw, 4rem); font-weight: 750; }
 
 .hero .hero-art > a { position: relative; overflow: hidden; aspect-ratio: 1.42; }
 .hero .hero-art img { position: absolute; width: 155%; max-width: none; left: -7%; top: 50%; transform: translateY(-50%); }
+.hero, .feature { grid-template-columns: minmax(0, 1fr); }
+.feature-copy p { max-width: 76ch; }
 </style>
 </head>
 <body>
@@ -196,10 +196,6 @@ h2 { font-size: clamp(2.2rem, 4.7vw, 4rem); font-weight: 750; }
       <p class="hero-note">What I enjoy most is making the analysis useful to the person who has to act on it.</p>
       <div class="actions"><a class="button primary" href="#work">Explore my work</a><a class="button secondary" href="assets/Simbarashe_Mukanganyama_CV.pdf" download>Download CV</a></div>
     </div>
-    <figure class="hero-art">
-      <a href="assets/eastern-cape-et.webp" aria-label="Open the full autumn 2024 water-use map"><img src="assets/eastern-cape-et.webp" width="1754" height="1240" alt="Detail of the evapotranspiration map along the coast near Gqeberha" fetchpriority="high"></a>
-      <figcaption><span>Coastal water use</span><span>Map detail · Eastern Cape</span></figcaption>
-    </figure>
   </section>
 
   <section class="work" id="work" aria-labelledby="work-title">
@@ -208,17 +204,13 @@ h2 { font-size: clamp(2.2rem, 4.7vw, 4rem); font-weight: 750; }
       <p class="section-intro work-intro">I’ve worked on GIS applications as part of a team, alongside research and fieldwork. I enjoy making spatial data easier to check, understand and use.</p>
 
       <article class="feature" id="water-accounting">
-        <div class="feature-copy">
+        <div class="feature-copy" id="forest-water-use">
           <p class="meta">Sinda Africa · CSIR-funded forestry study</p>
           <h3>Water accounting &amp; forest water use</h3>
           <p>How much water are forests using? I contributed satellite data, evapotranspiration analysis and reporting to a study in the Sarah Baartman District in the Eastern Cape. My water accounting work focuses on estimating the water that returns to the atmosphere through soil evaporation and plant transpiration.</p>
           <p>I also used SEBAL to estimate forest water use in a separate postgraduate research project at the University of Fort Hare.</p>
           <ul class="tags" aria-label="Skills"><li>Earth observation</li><li>Evapotranspiration</li><li>SEBAL</li></ul>
         </div>
-        <figure class="hero-art water-art" id="forest-water-use">
-          <a href="assets/eastern-cape-et.webp" aria-label="Open the Eastern Cape evapotranspiration map at full size"><img src="assets/eastern-cape-et.webp" width="1754" height="1240" alt="Autumn 2024 evapotranspiration across the Eastern Cape, with a colour legend and regional locator" loading="lazy"></a>
-          <figcaption><span>Actual evapotranspiration</span><span>Eastern Cape · Autumn 2024</span></figcaption>
-        </figure>
       </article>
 
       <h3 class="collection-title">Geospatial application development</h3>
