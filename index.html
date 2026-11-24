@@ -9,8 +9,8 @@
 <meta property="og:description" content="Projects in GIS development, water accounting, GeoAI and Earth observation.">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://cmbar94.github.io/">
-<meta property="og:image" content="https://cmbar94.github.io/assets/terrain.webp">
-<link rel="icon" href="assets/terrain.webp">
+<meta property="og:image" content="https://cmbar94.github.io/assets/eastern-cape-et.webp">
+<link rel="icon" href="assets/eastern-cape-et.webp">
 <title>Simbarashe Mukanganyama | Geospatial Portfolio</title>
 <style>
 :root {
@@ -167,6 +167,16 @@ h2 { font-size: clamp(2.2rem, 4.7vw, 4rem); font-weight: 750; }
 @media (max-width: 680px) {
   .project-notes { grid-template-columns: 1fr; }
 }
+
+/* Keep the original map legends and scale bars visible. */
+.hero-art, .hero-art.water-art { display: flex; flex-direction: column; aspect-ratio: auto; min-height: 0; background: white; }
+.hero-art > a { display: flex; flex: 1; align-items: center; }
+.hero-art img { position: static; width: 100%; height: auto; object-fit: contain; }
+.hero-art::after { display: none; }
+.hero-art figcaption { position: static; background: var(--dark); flex-wrap: wrap; }
+
+.hero .hero-art > a { position: relative; overflow: hidden; aspect-ratio: 1.42; }
+.hero .hero-art img { position: absolute; width: 155%; max-width: none; left: -7%; top: 50%; transform: translateY(-50%); }
 </style>
 </head>
 <body>
@@ -187,10 +197,8 @@ h2 { font-size: clamp(2.2rem, 4.7vw, 4rem); font-weight: 750; }
       <div class="actions"><a class="button primary" href="#work">Explore my work</a><a class="button secondary" href="assets/Simbarashe_Mukanganyama_CV.pdf" download>Download CV</a></div>
     </div>
     <figure class="hero-art">
-      <img src="assets/terrain.webp" width="1100" height="760" alt="Illustrative terrain with contour lines and a river through a steep valley" fetchpriority="high">
-      <div class="map-grid" aria-hidden="true"></div>
-      <div class="north" aria-hidden="true">N<br>▲</div>
-      <figcaption><span>Terrain &amp; drainage</span><span>Illustrative map</span></figcaption>
+      <a href="assets/eastern-cape-et.webp" aria-label="Open the full autumn 2024 water-use map"><img src="assets/eastern-cape-et.webp" width="1754" height="1240" alt="Detail of the evapotranspiration map along the coast near Gqeberha" fetchpriority="high"></a>
+      <figcaption><span>Coastal water use</span><span>Map detail · Eastern Cape</span></figcaption>
     </figure>
   </section>
 
@@ -208,8 +216,8 @@ h2 { font-size: clamp(2.2rem, 4.7vw, 4rem); font-weight: 750; }
           <ul class="tags" aria-label="Skills"><li>Earth observation</li><li>Evapotranspiration</li><li>SEBAL</li></ul>
         </div>
         <figure class="hero-art water-art" id="forest-water-use">
-          <img src="assets/forest.webp" width="1100" height="760" alt="" loading="lazy">
-          <figcaption><span>Forestry &amp; water use</span><span>Illustrative map</span></figcaption>
+          <a href="assets/eastern-cape-et.webp" aria-label="Open the Eastern Cape evapotranspiration map at full size"><img src="assets/eastern-cape-et.webp" width="1754" height="1240" alt="Autumn 2024 evapotranspiration across the Eastern Cape, with a colour legend and regional locator" loading="lazy"></a>
+          <figcaption><span>Actual evapotranspiration</span><span>Eastern Cape · Autumn 2024</span></figcaption>
         </figure>
       </article>
 
