@@ -3,303 +3,446 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Simbarashe Mukanganyama is a geospatial data scientist and developer working across GIS, remote sensing, water accounting, GeoAI and environmental monitoring.">
-<meta name="theme-color" content="#12282e">
+<meta name="description" content="Simbarashe Mukanganyama builds geospatial tools for flood monitoring, water accounting, environmental analysis and spatial data quality.">
+<meta name="theme-color" content="#142823">
 <meta property="og:title" content="Simbarashe Mukanganyama | Geospatial Portfolio">
-<meta property="og:description" content="Projects in GIS development, water accounting, GeoAI and Earth observation.">
+<meta property="og:description" content="Geospatial application development, Earth observation and environmental monitoring.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://cmbar94.github.io/">
 <link rel="canonical" href="https://cmbar94.github.io/">
 <title>Simbarashe Mukanganyama | Geospatial Portfolio</title>
 <style>
 :root {
   color-scheme: light;
-  --page: #f9f9f4;
+  --ink: #172824;
+  --muted: #51605a;
+  --page: #f6f5ef;
   --paper: #fffefa;
-  --ink: #162d32;
-  --muted: #40585c;
-  --rule: #d4deda;
-  --green: #185749;
-  --accent: #ad4835;
-  --dark: #102c32;
-  --radius: 14px;
-  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  --rule: #d9ded3;
+  --deep: #142823;
+  --deepest: #0e211c;
+  --mist: #cad8d1;
+  --lime: #d4ecaa;
+  --accent: #315b43;
+  --measure: 1240px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
-* { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--page); color: var(--ink); line-height: 1.62; }
-a { color: inherit; text-underline-offset: .22em; }
-button { font: inherit; }
+body { margin: 0; color: var(--ink); background: var(--page); line-height: 1.6; }
+h1, h2, h3, p, ul, figure { margin: 0; }
+h1, h2, h3 { line-height: 1.07; text-wrap: balance; }
+a { color: inherit; }
 img, canvas { display: block; max-width: 100%; }
-figure { margin: 0; }
-p { margin: 0 0 1em; }
-h1, h2, h3 { margin: 0; line-height: 1.14; }
-h1, h2 { letter-spacing: -.064em; }
-h3 { letter-spacing: -.035em; }
-[id] { scroll-margin-top: 86px; }
-:focus-visible { outline: 3px solid #ba563e; outline-offset: 4px; }
-.wrap { width: min(1170px, calc(100% - 72px)); margin-inline: auto; }
-.skip { position: fixed; z-index: 5; top: 1rem; left: 1rem; background: white; padding: .5rem 1rem; transform: translateY(-200%); }
-.skip:focus { transform: none; }
-.site-header { z-index: 3; position: sticky; top: 0; background: var(--page); border-bottom: 1px solid var(--rule); }
-.nav { min-height: 73px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-.brand, .nav-links a { text-decoration: none; }
-.brand { display: inline-flex; align-items: center; gap: .7rem; font-size: .92rem; line-height: 1.2; }
-.brand span { display: grid; place-items: center; width: 35px; height: 35px; border-radius: 7px; background: var(--dark); color: white; font-weight: 700; font-size: .76rem; }
-.nav-links { display: flex; gap: clamp(.7rem, 3vw, 2.4rem); font-weight: 620; font-size: .9rem; }
-.nav-links a:hover, .footer a:hover { color: var(--green); text-decoration: underline; }
-.hero { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 76px); align-items: center; padding-block: 74px 80px; }
-.eyebrow, .meta { font-size: .85rem; font-weight: 700; }
-.eyebrow { display: flex; align-items: center; gap: .58rem; text-transform: uppercase; letter-spacing: .115em; color: var(--green); margin-bottom: 1.1rem; }
-.eyebrow span { width: 10px; height: 10px; flex: 0 0 10px; background: var(--accent); transform: rotate(45deg) scale(.74); }
-h1 { font-size: clamp(2.45rem, 5.75vw, 5.25rem); line-height: .99; font-weight: 760; }
-.period { color: var(--accent); }
-.intro { max-width: 33rem; margin: 1.45rem 0 1.55rem; color: var(--muted); font-size: clamp(1rem, 1.55vw, 1.25rem); }
-.actions, .contact-links { display: flex; flex-wrap: wrap; gap: .7rem; }
-.button { display: inline-flex; justify-content: center; align-items: center; min-height: 46px; padding: .56rem 1rem; border: 1px solid transparent; border-radius: 7px; font-weight: 690; text-decoration: none; cursor: pointer; font-size: .91rem; }
-.primary { background: var(--green); color: #fff; }
-.primary:hover { background: #12463a; }
-.secondary { border-color: #9eafaa; background: transparent; }
-.secondary:hover { background: #e9efeb; }
-.place { margin: 1.2rem 0 0; font-size: .88rem; color: var(--muted); }
-.hero-art { position: relative; overflow: hidden; border-radius: var(--radius); aspect-ratio: 1.18; background: var(--dark); }
-.hero-art img { width: 100%; height: 100%; object-fit: cover; }
-.hero-art::after { content: ""; position: absolute; inset: 55% 0 0; background: linear-gradient(transparent, #071c22e8); }
-.map-grid { position: absolute; inset: 0; background-image: linear-gradient(90deg, #d0eee324 1px, transparent 1px), linear-gradient(#d0eee324 1px, transparent 1px); background-size: 16.667% 20%; }
-.north { position: absolute; top: 18px; right: 18px; display: grid; place-content: center; width: 42px; height: 55px; font: 700 .8rem/1.1 system-ui; text-align: center; background: #102c32e5; color: white; border: 1px solid #b3cbc57d; border-radius: 6px; }
-.hero-art figcaption { position: absolute; z-index: 1; bottom: 0; left: 0; right: 0; color: white; display: flex; justify-content: space-between; gap: .5rem; padding: 1rem; font-size: .82rem; }
-.hero-art figcaption span:first-child { font-weight: 750; }
-h2 { font-size: clamp(2.2rem, 4.7vw, 4rem); font-weight: 750; }
-.work, .experience { padding-block: 72px 76px; background: #eef1ec; border-block: 1px solid var(--rule); }
-.feature { margin: 28px 0 20px; display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--rule); background: var(--paper); border-radius: var(--radius); overflow: hidden; }
-.feature-copy, .project-copy { padding: clamp(24px, 3.4vw, 41px); }
-.meta { color: var(--green); margin-bottom: .55rem; line-height: 1.4; }
-.feature h3, .project h3 { font-size: clamp(1.65rem, 3.2vw, 2.65rem); margin-bottom: .85rem; }
-.feature p:not(.meta), .project p:not(.meta), .related p, .timeline p:not(.meta), .toolkit p, .section-intro { color: var(--muted); }
-.feature-art { background: #102e35; color: white; display: flex; flex-direction: column; justify-content: center; }
-.feature-art canvas { width: 100%; height: auto; }
-.feature-art figcaption { text-align: right; padding: .5rem .9rem; color: #c5d8d3; font-size: .79rem; }
-.tags { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; margin: 1.1rem 0 0; padding: 0; }
-.tags li { padding: .17rem .55rem; border-radius: 5px; background: #eaf1ec; color: #244e45; font-size: .82rem; font-weight: 650; }
-.text-link { display: inline-block; margin-top: 1.2rem; color: var(--green); font-weight: 700; }
-.project-grid, .related { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.project { border: 1px solid var(--rule); background: var(--paper); border-radius: var(--radius); overflow: hidden; }
-.project img { width: 100%; height: auto; aspect-ratio: 2.6; object-fit: cover; }
-.map-note { font-size: .82rem; color: var(--muted); margin: .55rem 0 0; }
-.related { margin-top: 1.55rem; }
-.related article { padding: 1rem 0 0; border-top: 1px solid #c2cec7; }
-.related h3 { font-size: 1.25rem; margin-bottom: .55rem; }
-.related p { margin-bottom: 0; }
-.demo { padding-block: 75px; }
-.section-intro { margin-block: 1rem 1.5rem; }
-.demo-layout { display: grid; grid-template-columns: 1.4fr 1fr; border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; background: var(--paper); }
-.demo-map { background: #102e35; color: white; align-content: center; }
-.demo-map canvas { width: 100%; height: auto; cursor: crosshair; }
-.legend { display: flex; flex-wrap: wrap; gap: .5rem 1.3rem; padding: .65rem 1rem 1rem; font-size: .88rem; }
-.legend i { display: inline-block; width: .72em; height: .72em; margin-right: .35em; }
-.valid { border: 1px solid #81c5a7; }
-.flagged { background: #ffaf85; }
-.demo-controls { padding: clamp(1rem, 3vw, 2rem); }
-.status { color: var(--muted); margin-block: .8rem; }
-#issues { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
-.issue { width: 100%; text-align: left; padding: .38rem .65rem; border: 1px solid var(--rule); border-radius: 5px; background: #f7f8f4; color: var(--ink); font-size: .88rem; cursor: pointer; }
-.issue:hover, .issue[aria-pressed="true"] { background: #e2efe5; border-color: #609283; }
-.parcel-detail { margin-top: 1rem; color: var(--muted); font-size: .9rem; }
-.parcel-detail p { margin: 0 0 .5rem; }
-.experience-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(24px, 8vw, 112px); margin-top: 1.8rem; }
-.timeline article, .toolkit article { padding-block: .95rem; border-top: 1px solid #c2cec7; }
-.timeline h3, .toolkit h3 { margin-bottom: .4rem; font-size: 1.25rem; }
-.timeline p:last-child, .toolkit p:last-child { margin-bottom: 0; }
-.contact { background: var(--dark); color: #f7faf7; padding-block: 64px; }
-.contact .eyebrow { color: #b4e0d0; }
-.contact .eyebrow span { background: #fda887; }
-.contact h2 { font-size: clamp(2rem, 4.2vw, 3.5rem); }
-.contact p:last-child { margin: .75rem 0 0; color: #d2e0dd; }
-.contact-inner { display: flex; flex-wrap: wrap; gap: 1.4rem 2.5rem; justify-content: space-between; align-items: center; }
-.light { background: #d6f1df; color: #13372f; }
-.light:hover { background: #fff; }
-.outline { border-color: #98b2b0; color: white; }
-.outline:hover { background: #24464a; }
-.footer { display: flex; justify-content: space-between; gap: 1rem; padding-block: 1.2rem; font-size: .88rem; color: var(--muted); }
-@media (max-width: 900px) {
-  .wrap { width: min(1170px, calc(100% - 42px)); }
-  .hero { padding-block: 53px 60px; gap: 25px; }
+button { font: inherit; }
+summary { cursor: pointer; }
+:focus-visible { outline: 3px solid #af6c34; outline-offset: 5px; }
+[id] { scroll-margin-top: 1.5rem; }
+.wrap { width: min(var(--measure), calc(100% - 96px)); margin-inline: auto; }
+.skip {
+  position: fixed; z-index: 10; top: 10px; left: 10px; padding: .65rem 1rem;
+  background: var(--lime); color: var(--ink); transform: translateY(-180%);
 }
-@media (max-width: 700px) {
-  .hero, .feature, .demo-layout, .experience-grid { grid-template-columns: 1fr; }
-  .hero { gap: 1.8rem; padding-block: 44px 42px; }
-  .hero-art { aspect-ratio: 1.55; }
-  h1 { font-size: clamp(2.2rem, 10vw, 4.35rem); }
-  .work, .demo, .experience, .contact { padding-block: 46px; }
-  .project-grid, .related { gap: 14px; }
-  .feature-art { order: -1; }
-  .feature-art canvas { max-height: 260px; object-fit: contain; }
+.skip:focus { transform: translateY(0); }
+.masthead { color: #f5f7ef; background: var(--deep); }
+.nav {
+  min-height: 75px; display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem 2rem; border-bottom: 1px solid #ffffff2b;
 }
-@media (max-width: 510px) {
-  .wrap { width: calc(100% - 32px); }
-  .nav { min-height: 68px; align-items: center; gap: .55rem; }
-  .brand { max-width: 48%; }
-  .brand span { display: none; }
-  .nav-links { gap: .62rem; font-size: .83rem; }
-  .project-grid, .related { grid-template-columns: 1fr; }
-  .eyebrow { font-size: .8rem; }
+.brand { display: inline-flex; align-items: center; gap: .8rem; text-decoration: none; font-weight: 700; }
+.brand-mark {
+  display: grid; place-items: center; height: 2.3rem; width: 2.3rem;
+  border: 1px solid #d4ecaa78; border-radius: 50%; color: var(--lime);
+  font-size: .76rem; letter-spacing: .07em;
+}
+.nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem clamp(.75rem, 2.3vw, 2.2rem); }
+.nav-links a { text-decoration: none; font-size: .9rem; color: var(--mist); }
+.nav-links a:hover, .nav-links a:focus-visible { color: var(--lime); }
+.nav-links .nav-contact {
+  border: 1px solid #ffffff42; border-radius: 100px; padding: .28rem .85rem; color: #f5f7ef;
+}
+.hero {
+  display: grid; grid-template-columns: minmax(0, .97fr) minmax(0, 1.03fr); align-items: center;
+  gap: clamp(2.25rem, 5.6vw, 5.8rem); padding-block: clamp(4rem, 7vw, 7.2rem);
+}
+.eyebrow { font-size: .76rem; letter-spacing: .14em; font-weight: 750; text-transform: uppercase; color: var(--accent); }
+.hero .eyebrow { color: var(--lime); }
+.hero h1 {
+  margin: .85rem 0 1.4rem; font-weight: 680; font-size: clamp(3.1rem, 5.1vw, 5.65rem);
+  line-height: .99; letter-spacing: -.071em;
+}
+.hero h1 span { color: var(--lime); }
+.hero .intro { max-width: 41ch; font-size: clamp(1rem, 1.5vw, 1.19rem); color: var(--mist); }
+.actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.75rem; }
+.button {
+  display: inline-flex; min-height: 46px; align-items: center; justify-content: center; padding: .65rem 1.05rem;
+  gap: .55rem; border: 1px solid transparent; border-radius: 6px;
+  font-size: .9rem; font-weight: 720; text-decoration: none; cursor: pointer;
+}
+.button.primary { background: var(--lime); color: var(--deepest); }
+.button.primary:hover { background: #e6f4cd; }
+.button.outline { border-color: #ffffff55; background: transparent; color: #fff; }
+.button.outline:hover { border-color: var(--lime); color: var(--lime); }
+.hero-visual { min-width: 0; border: 1px solid #ffffff38; padding: .55rem; border-radius: 10px; }
+.image-wrap { overflow: hidden; aspect-ratio: 1.34; background: #284537; border-radius: 5px; }
+.image-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 52%; }
+.hero-visual figcaption {
+  display: flex; justify-content: space-between; align-items: start; gap: .35rem 1rem;
+  padding: .7rem .35rem .22rem; color: var(--mist); font-size: .75rem;
+}
+.hero-visual figcaption a { text-underline-offset: 3px; }
+.section { padding-block: clamp(3.3rem, 7vw, 6.1rem); }
+.section h2, .contact h2 {
+  margin-top: .45rem; font-size: clamp(2.2rem, 4.4vw, 4.2rem); letter-spacing: -.063em; font-weight: 670;
+}
+.section-lead { max-width: 62ch; margin-top: .95rem; color: var(--muted); font-size: 1.03rem; }
+.about { background: var(--paper); }
+.about-grid {
+  display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); gap: 1.6rem clamp(2.75rem, 8vw, 8.4rem);
+}
+.about-copy { max-width: 60ch; color: var(--muted); font-size: 1.06rem; }
+.about-copy p + p { margin-top: .85rem; }
+.text-link {
+  display: inline-block; margin-top: .9rem; color: var(--accent); font-weight: 720;
+  text-decoration-thickness: 1px; text-underline-offset: 4px;
+}
+.projects { border-block: 1px solid var(--rule); }
+.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; margin-top: 1.9rem; }
+.project {
+  --project-tint: #e3eddf; background: var(--paper); border: 1px solid var(--rule);
+  border-radius: 10px; display: flex; flex-direction: column; min-width: 0; overflow: hidden;
+}
+.project:nth-child(2) { --project-tint: #e1ebef; }
+.project:nth-child(3) { --project-tint: #eee6d8; }
+.project:nth-child(4) { --project-tint: #eae8f0; }
+.project-title { padding: clamp(1.25rem, 3.3vw, 2.2rem); background: var(--project-tint); }
+.project-title .eyebrow { color: #364b40; }
+.project h3 { margin-top: .65rem; font-size: clamp(1.65rem, 2.8vw, 2.7rem); letter-spacing: -.048em; font-weight: 690; }
+.project-body {
+  display: flex; flex-direction: column; flex: 1; padding: 1.2rem clamp(1.25rem, 3.3vw, 2.2rem) 1.3rem;
+}
+.project-body > p, .case-copy p { color: var(--muted); }
+.tags {
+  display: flex; flex-wrap: wrap; gap: .35rem; list-style: none; padding: 0; margin: .85rem 0 1.1rem;
+}
+.tags li {
+  color: #3b4d44; font-size: .77rem; border: 1px solid var(--rule); border-radius: 30px; padding: .2rem .6rem;
+}
+.project details { margin-top: auto; border-top: 1px solid var(--rule); }
+.project summary, .demo-disclosure > summary {
+  display: flex; justify-content: space-between; align-items: center; gap: .8rem;
+  list-style: none; padding: .75rem 0 .1rem; color: var(--accent); font-weight: 760;
+}
+summary::-webkit-details-marker { display: none; }
+.project summary::after, .demo-disclosure > summary::after { content: "+"; font-size: 1.15rem; line-height: 1; }
+.project details[open] summary::after, .demo-disclosure[open] > summary::after { content: "−"; }
+.case-copy { padding-top: .65rem; font-size: .95rem; }
+.case-copy p + p { margin-top: .6rem; }
+.research {
+  margin-top: 1.1rem; display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr);
+  padding: clamp(1.25rem, 3.3vw, 2.2rem); gap: 1rem clamp(2rem, 5vw, 5.2rem);
+  background: #eaf0e4; border: 1px solid #d9e2d5; border-radius: 10px;
+}
+.research h3 { font-size: clamp(1.5rem, 2.85vw, 2.4rem); letter-spacing: -.045em; margin-top: .45rem; }
+.research .body { color: var(--muted); }
+.research .body p + p { margin-top: .55rem; }
+.demo { margin-top: 1.1rem; }
+.demo-disclosure { border: 1px solid var(--rule); background: var(--paper); border-radius: 10px; padding: 0 1.25rem; }
+.demo-disclosure > summary { padding: .85rem 0; }
+.demo-disclosure[open] { padding-bottom: 1.25rem; }
+.demo-layout { display: grid; grid-template-columns: 1.5fr 1fr; align-items: start; gap: 1.1rem; margin-top: .95rem; }
+.demo-map { overflow: hidden; background: #102e35; border-radius: 8px; }
+.demo-map canvas { width: 100%; height: auto; }
+.legend {
+  display: flex; flex-wrap: wrap; padding: .5rem .75rem; gap: .45rem .85rem;
+  color: #e2f2e9; font-size: .76rem;
+}
+.legend i { display: inline-block; width: .7em; height: .7em; margin-right: .24rem; border-radius: 50%; }
+.legend .valid { background: #81c5a7; }
+.legend .flagged { background: #ffaf85; }
+.demo .button.primary { background: var(--accent); color: #fff; }
+.demo .button.primary:hover { background: var(--deep); }
+.status, .parcel-detail, .demo-intro { font-size: .91rem; color: var(--muted); }
+.status { margin-top: .6rem; }
+#issues { margin: .6rem 0; list-style: none; display: grid; gap: .3rem; padding: 0; }
+.issue {
+  width: 100%; text-align: left; background: var(--page); color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 5px; padding: .35rem .55rem; cursor: pointer; font-size: .84rem;
+}
+.issue[aria-pressed="true"] { border-color: var(--accent); background: #e5efde; }
+.parcel-detail p + p { margin-top: .35rem; }
+.expertise { background: var(--paper); }
+.expertise-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.5rem 2rem; margin-top: 1.9rem; }
+.expertise-grid article { border-top: 2px solid #b2c8ad; padding-top: .8rem; }
+.expertise-grid h3 { font-size: 1.3rem; letter-spacing: -.034em; }
+.expertise-grid p { color: var(--muted); font-size: .94rem; margin-top: .65rem; }
+.experience { border-top: 1px solid var(--rule); }
+.experience-grid { display: grid; grid-template-columns: 1.35fr .85fr; gap: 1.6rem clamp(2rem,5vw,5.2rem); margin-top: 1.7rem; }
+.timeline { border-top: 1px solid var(--rule); }
+.timeline > article { padding-block: .85rem; border-bottom: 1px solid var(--rule); }
+.timeline h3, .education h3 { font-size: 1.18rem; letter-spacing: -.028em; }
+.timeline .date { color: var(--accent); font-size: .76rem; font-weight: 730; margin-bottom: .25rem; }
+.timeline p:last-child, .education p { font-size: .94rem; color: var(--muted); margin-top: .35rem; }
+.education {
+  align-self: start; padding: 1.35rem; background: var(--paper);
+  border: 1px solid var(--rule); border-radius: 10px;
+}
+.education h3 + p, .education p + p { margin-top: .75rem; }
+.contact { background: var(--deep); color: #f5f7ef; }
+.contact .eyebrow { color: var(--lime); }
+.contact .wrap {
+  display: grid; grid-template-columns: 1.25fr .75fr; align-items: end; gap: 1.4rem 2rem;
+  padding-block: clamp(3rem, 6vw, 5.1rem);
+}
+.contact h2 { max-width: 17ch; }
+.contact p:not(.eyebrow) { color: var(--mist); max-width: 56ch; margin-top: .85rem; }
+.contact .actions { justify-content: end; }
+footer { background: var(--deepest); color: #c7d3cc; font-size: .83rem; }
+footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding-block: .9rem; }
+footer a { text-underline-offset: 3px; }
+@media (max-width: 1000px) {
+  .wrap { width: calc(100% - 64px); }
+  .hero { gap: 2.25rem; }
+  .hero h1 { font-size: clamp(2.85rem, 6.1vw, 4.7rem); }
+  .hero-visual figcaption { font-size: .7rem; }
+}
+@media (max-width: 730px) {
+  .wrap { width: calc(100% - 36px); }
+  .nav { padding-block: .55rem .75rem; min-height: 0; row-gap: .6rem; flex-wrap: wrap; }
+  .nav-links { width: 100%; gap: .5rem .95rem; }
+  .nav-links a { font-size: .82rem; }
+  .brand { font-size: .92rem; }
+  .hero, .about-grid, .research, .experience-grid, .contact .wrap { grid-template-columns: minmax(0,1fr); }
+  .hero { padding-block: 2.9rem 2rem; gap: 1.8rem; }
+  .hero h1 { font-size: clamp(2.75rem, 8.5vw, 4.5rem); }
+  .hero-visual figcaption { flex-wrap: wrap; }
+  .image-wrap { aspect-ratio: 1.65; }
+  .contact .actions { justify-content: start; margin-top: 0; }
+  .expertise-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .demo-layout { grid-template-columns: minmax(0,1fr); }
+}
+@media (max-width: 480px) {
+  .project-grid, .expertise-grid { grid-template-columns: minmax(0,1fr); }
+  .hero h1 { letter-spacing: -.065em; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-
-.hero-note { margin: -0.55rem 0 1.5rem; color: var(--muted); max-width: 29rem; }
-.work-intro { max-width: 49rem; }
-.water-art { border-radius: 0; align-self: stretch; aspect-ratio: auto; min-height: 255px; }
-.water-art img { position: absolute; inset: 0; }
-.collection-title { margin: 2.35rem 0 1rem; font-size: clamp(1.55rem, 3vw, 2.2rem); }
-.snippets .project-copy { padding: clamp(20px, 2.6vw, 30px); }
-.project h4, .project-notes h4 { margin: 0 0 .55rem; font-size: 1.25rem; line-height: 1.25; letter-spacing: -.02em; }
-.team-credit { margin: 1rem 0 0; font-size: .9rem; color: var(--muted); }
-.project-notes { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 0; }
-.demo { padding-block: 36px; }
-.demo-disclosure { border: 1px solid var(--rule); border-radius: var(--radius); padding: 1rem 1.25rem; background: var(--paper); }
-.demo-disclosure summary { cursor: pointer; font-weight: 700; color: var(--green); }
-.demo-disclosure .demo-layout { margin-bottom: .25rem; }
-.contact-location { font-size: .9rem; }
-@media (max-width: 700px) {
-  .water-art { aspect-ratio: 2; min-height: 0; }
-}
-@media (max-width: 680px) {
-  .project-notes { grid-template-columns: 1fr; }
-}
-
-/* Keep the original map legends and scale bars visible. */
-.hero-art, .hero-art.water-art { display: flex; flex-direction: column; aspect-ratio: auto; min-height: 0; background: white; }
-.hero-art > a { display: flex; flex: 1; align-items: center; }
-.hero-art img { position: static; width: 100%; height: auto; object-fit: contain; }
-.hero-art::after { display: none; }
-.hero-art figcaption { position: static; background: var(--dark); flex-wrap: wrap; }
-
-.hero .hero-art > a { position: relative; overflow: hidden; aspect-ratio: 1.42; }
-.hero .hero-art img { position: absolute; width: 155%; max-width: none; left: -7%; top: 50%; transform: translateY(-50%); }
-.hero, .feature { grid-template-columns: minmax(0, 1fr); }
-.feature-copy p { max-width: 76ch; }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-  <nav class="wrap nav" aria-label="Main navigation">
-    <a class="brand" href="#top"><span aria-hidden="true">SM</span> <strong>Simbarashe Mukanganyama</strong></a>
-    <div class="nav-links"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
-  </nav>
-</header>
+<div class="masthead" id="top">
+  <header class="wrap">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">SM</span> Simbarashe Mukanganyama</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Projects</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a class="nav-contact" href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <section class="hero wrap" aria-labelledby="page-title">
+    <div>
+      <p class="eyebrow">Earth observation · web GIS · spatial data</p>
+      <h1 id="page-title">Geospatial data scientist <span>&amp; developer.</span></h1>
+      <p class="intro">I build tools that help people understand floods, track water use and check the quality of the maps they rely on.</p>
+      <div class="actions">
+        <a class="button primary" href="#work">Explore projects <span aria-hidden="true">↓</span></a>
+        <a class="button outline" href="assets/Simbarashe_Mukanganyama_CV.pdf" download>Download CV</a>
+      </div>
+    </div>
+    <figure class="hero-visual">
+      <div class="image-wrap">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/ISS006-E-7894_-_View_of_South_Africa%2C_Greater_Brandvlei_%26_Breede_River.jpg"
+             width="2120" height="1429" fetchpriority="high"
+             alt="The Breede River valley and Greater Brandvlei Dam in the Western Cape, photographed from orbit.">
+      </div>
+      <figcaption>
+        <span>Breede River Valley, South Africa</span>
+        <a href="https://commons.wikimedia.org/wiki/File:ISS006-E-7894_-_View_of_South_Africa,_Greater_Brandvlei_%26_Breede_River.jpg">NASA / ISS photography</a>
+      </figcaption>
+    </figure>
+  </section>
+</div>
+
 <main id="main">
-  <section class="hero wrap" id="top" aria-labelledby="name">
-    <div class="hero-copy">
-      <p class="eyebrow"><span></span> Geospatial data scientist &amp; developer</p>
-      <h1 id="name">Simbarashe<br>Mukanganyama<span class="period">.</span></h1>
-      <p class="intro">Hi, I’m Simbarashe. I got my start mapping city infrastructure in Harare. Since then, I’ve taught GIS, estimated forest water use from satellite imagery, and built mapping tools with the team at Innocom.</p>
-      <p class="hero-note">What I enjoy most is making the analysis useful to the person who has to act on it.</p>
-      <div class="actions"><a class="button primary" href="#work">Explore my work</a><a class="button secondary" href="assets/Simbarashe_Mukanganyama_CV.pdf" download>Download CV</a></div>
+  <section class="section about" id="about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <div><p class="eyebrow">About</p><h2 id="about-title">From field data to tools people can use.</h2></div>
+      <div class="about-copy">
+        <p>I’m Simbarashe. I started out mapping municipal infrastructure in Harare. I later taught GIS and remote sensing at the University of Fort Hare, analysed forest water use in the Eastern Cape, and co-developed mapping and review tools with the team at Innocom Global Geospatial.</p>
+        <p>My work combines satellite imagery, field records and spatial databases. I’m especially interested in making it easier for people to trace a result back to the data behind it and decide what to do next.</p>
+        <a class="text-link" href="#experience">See my experience <span aria-hidden="true">→</span></a>
+      </div>
     </div>
   </section>
 
-  <section class="work" id="work" aria-labelledby="work-title">
+  <section class="section projects" id="work" aria-labelledby="work-title">
     <div class="wrap">
-      <h2 id="work-title">A few things I’ve worked on</h2>
-      <p class="section-intro work-intro">I’ve worked on GIS applications as part of a team, alongside research and fieldwork. I enjoy making spatial data easier to check, understand and use.</p>
+      <p class="eyebrow">Portfolio</p>
+      <h2 id="work-title">Featured projects</h2>
+      <p class="section-lead">Applications I helped build at Innocom Global Geospatial, alongside research in Earth observation and water use.</p>
+      <div class="project-grid">
+        <article class="project" id="flood-monitoring">
+          <div class="project-title">
+            <p class="eyebrow">Flood risk</p>
+            <h3>Flood monitoring &amp; exposure</h3>
+          </div>
+          <div class="project-body">
+            <p>Interactive maps that help teams see which areas and assets could be affected by flooding.</p>
+            <ul class="tags" aria-label="Methods"><li>Hazard mapping</li><li>Exposure analysis</li><li>Web GIS</li></ul>
+            <details><summary>View case study</summary>
+              <div class="case-copy">
+                <p><strong>My contribution</strong> — I contributed to the GIS work behind flood susceptibility and exposure mapping and helped present results in interactive maps.</p>
+                <p><strong>What it helps with</strong> — Comparing areas of potential flooding with mapped features so a reviewer can identify which locations need a closer look.</p>
+              </div>
+            </details>
+          </div>
+        </article>
+        <article class="project" id="water-accounting-app">
+          <div class="project-title">
+            <p class="eyebrow">Water resources</p>
+            <h3>Water accounting application</h3>
+          </div>
+          <div class="project-body">
+            <p>A GIS application for exploring water accounting information, informed by my research on forest water use.</p>
+            <ul class="tags" aria-label="Methods"><li>Water accounting</li><li>Earth observation</li><li>GIS development</li></ul>
+            <details><summary>View case study</summary>
+              <div class="case-copy">
+                <p><strong>My contribution</strong> — I helped develop the GIS application at Innocom, drawing on experience using satellite imagery to estimate water use across forested areas.</p>
+                <a class="text-link" href="#water-accounting">Read about my forestry research <span aria-hidden="true">→</span></a>
+              </div>
+            </details>
+          </div>
+        </article>
+        <article class="project" id="environmental-analysis">
+          <div class="project-title">
+            <p class="eyebrow">Environmental monitoring</p>
+            <h3>DumpWatch</h3>
+          </div>
+          <div class="project-body">
+            <p>Geospatial work that supports the detection and monitoring of illegal dumping sites.</p>
+            <ul class="tags" aria-label="Methods"><li>Imagery</li><li>Site mapping</li><li>Environmental GIS</li></ul>
+            <details><summary>View case study</summary>
+              <div class="case-copy">
+                <p><strong>My contribution</strong> — I supported the team’s imagery and mapping work for the application, including work on labelling and classifying dumpsites.</p>
+                <p><strong>What it helps with</strong> — Organising mapped observations so teams can identify sites for further review.</p>
+              </div>
+            </details>
+          </div>
+        </article>
+        <article class="project" id="spatial-data-quality">
+          <div class="project-title">
+            <p class="eyebrow">Data engineering</p>
+            <h3>Spatial data quality tools</h3>
+          </div>
+          <div class="project-body">
+            <p>Automated checks that flag overlapping boundaries, geometry problems and missing attributes for GIS reviewers.</p>
+            <ul class="tags" aria-label="Methods"><li>Python</li><li>PostGIS</li><li>QGIS</li></ul>
+            <details><summary>View case study</summary>
+              <div class="case-copy">
+                <p><strong>My contribution</strong> — I built Python and SQL checks and co-developed tools that let teams locate flagged features and compare them with source imagery.</p>
+                <a class="text-link" href="#parcel-demo" data-open-demo>Try the public parcel demo <span aria-hidden="true">→</span></a>
+              </div>
+            </details>
+          </div>
+        </article>
+      </div>
 
-      <article class="feature" id="water-accounting">
-        <div class="feature-copy" id="forest-water-use">
-          <p class="meta">Sinda Africa · CSIR-funded forestry study</p>
-          <h3>Water accounting &amp; forest water use</h3>
-          <p>How much water are forests using? I contributed satellite data, evapotranspiration analysis and reporting to a study in the Sarah Baartman District in the Eastern Cape. My water accounting work focuses on estimating the water that returns to the atmosphere through soil evaporation and plant transpiration.</p>
-          <p>I also used SEBAL to estimate forest water use in a separate postgraduate research project at the University of Fort Hare.</p>
-          <ul class="tags" aria-label="Skills"><li>Earth observation</li><li>Evapotranspiration</li><li>SEBAL</li></ul>
+      <article class="research" id="water-accounting" aria-labelledby="forest-water-use">
+        <div>
+          <p class="eyebrow">Research · Eastern Cape</p>
+          <h3 id="forest-water-use">Estimating forest water use from satellite imagery</h3>
+        </div>
+        <div class="body">
+          <p>At Sinda Africa, I contributed satellite data, evapotranspiration analysis and reporting to a CSIR-funded forestry study in the Sarah Baartman District.</p>
+          <p>In a separate postgraduate research project at the University of Fort Hare, I used SEBAL to estimate how much water returns to the atmosphere through soil evaporation and plant transpiration.</p>
         </div>
       </article>
 
-      <h3 class="collection-title">Geospatial application development</h3>
-      <p class="section-intro work-intro">I co-developed applications at Innocom Global Geospatial. The work drew on these skills.</p>
-      <div class="project-grid snippets">
-        <article class="project" id="water-accounting-app"><div class="project-copy">
-          <h4>Water accounting application</h4>
-          <p>I helped develop a GIS application for water accounting at Innocom. I brought experience from my forestry research, where I used satellite imagery to estimate how much water trees use.</p>
-          <ul class="tags" aria-label="Skills"><li>Water accounting</li><li>GIS development</li><li>Remote sensing</li></ul>
-        </div></article>
-        <article class="project" id="spatial-data-quality"><div class="project-copy">
-          <h4>Spatial data quality</h4>
-          <p>I built Python and SQL checks for spatial data and helped develop tools that made it easier for a team to review mapped features and their attributes.</p>
-          <ul class="tags" aria-label="Skills"><li>Python</li><li>SQL</li><li>GIS quality assurance</li></ul>
-        </div></article>
-        <article class="project" id="environmental-analysis"><div class="project-copy">
-          <h4>Environmental GIS</h4>
-          <p>I contributed to mapping and spatial analysis for environmental assessment and monitoring on team projects.</p>
-          <ul class="tags" aria-label="Skills"><li>Spatial analysis</li><li>Environmental mapping</li></ul>
-        </div></article>
-        <article class="project" id="interactive-mapping"><div class="project-copy">
-          <h4>Interactive mapping</h4>
-          <p>I helped build tools that let people explore spatial information on a map. My work spans desktop GIS and browser-based applications.</p>
-          <ul class="tags" aria-label="Skills"><li>Web GIS</li><li>Cartography</li></ul>
-        </div></article>
-        <article class="project" id="imagery-analysis"><div class="project-copy">
-          <h4>Earth observation &amp; GeoAI</h4>
-          <p>I contributed to team projects that used satellite imagery for geospatial analysis, drawing on optical and radar remote sensing and image classification. I also contributed to work on land subsidence, using satellite radar interferometry (InSAR) to study how the ground surface moves over time.</p>
-          <ul class="tags" aria-label="Skills"><li>Remote sensing</li><li>Image classification</li></ul>
-        </div></article>
-      </div>
-
-      <h3 class="collection-title">More from the field and classroom</h3>
-      <div class="related project-notes">
-        <article id="environmental-gis"><h4>Environmental assessment</h4><p>At Sinda Africa I made hazard and site-suitability maps, visited sites for environmental audits, and supported impact assessments, environmental management plans and heritage mapping.</p></article>
-        <article id="infrastructure"><h4>Roads, utilities &amp; municipal GIS</h4><p>I processed survey and CAD data for roadworks, analysed routes with pgRouting and used GPS and Survey123 to map electricity assets. I also mapped municipal water infrastructure and worked with LiDAR data.</p></article>
-        <article id="teaching"><h4>Teaching GIS &amp; remote sensing</h4><p>At the University of Fort Hare I taught undergraduate lectures and practicals. I worked with hyperspectral imagery, image classification and methods for estimating evapotranspiration.</p></article>
+      <div class="demo" id="parcel-demo">
+        <details class="demo-disclosure">
+          <summary>Try a parcel review example</summary>
+          <p class="demo-intro">Run two quality checks on synthetic parcels, then select a flagged parcel to see the issue.</p>
+          <div class="demo-layout">
+            <div class="demo-map">
+              <canvas id="review-map" width="660" height="400" role="img" aria-label="Synthetic parcel map. The results list lets keyboard users select flagged parcels."></canvas>
+              <div class="legend"><span><i class="valid"></i>Parcel boundary</span><span><i class="flagged"></i>Review needed</span></div>
+            </div>
+            <div class="demo-controls">
+              <button type="button" class="button primary" id="run-checks">Run checks</button>
+              <p class="status" id="review-status" aria-live="polite">Dataset loaded.</p>
+              <ul id="issues" aria-label="Parcels for review"></ul>
+              <div id="parcel-detail" class="parcel-detail" aria-live="polite"></div>
+              <noscript><p>Enable JavaScript to run the checks.</p></noscript>
+            </div>
+          </div>
+        </details>
       </div>
     </div>
   </section>
 
-  <section class="demo wrap" id="parcel-demo" aria-label="Interactive parcel review example">
-    <details class="demo-disclosure">
-    <summary id="demo-title">Try a parcel review example</summary>
-    <p class="section-intro">This portfolio example uses made-up parcels. Run two checks to see which parcels need a closer look.</p>
-    <div class="demo-layout">
-      <div class="demo-map">
-        <canvas id="review-map" width="660" height="400" role="img" aria-label="Synthetic parcel map. Use the results list to select parcels by keyboard."></canvas>
-        <div class="legend"><span><i class="valid"></i> Parcel boundary</span><span><i class="flagged"></i> Review needed</span></div>
-      </div>
-      <div class="demo-controls">
-        <button type="button" class="button primary" id="run-checks">Run checks</button>
-        <p class="status" id="review-status" aria-live="polite">Dataset loaded.</p>
-        <ul id="issues" aria-label="Parcels for review"></ul>
-        <div id="parcel-detail" class="parcel-detail" aria-live="polite"></div>
-        <noscript><p>Enable JavaScript to run the checks.</p></noscript>
-      </div>
-    </div>
-    </details>
-  </section>
-
-  <section class="experience" id="experience" aria-labelledby="experience-title">
+  <section class="section expertise" id="expertise" aria-labelledby="expertise-title">
     <div class="wrap">
-      <h2 id="experience-title">Experience &amp; skills</h2>
+      <p class="eyebrow">Capabilities</p>
+      <h2 id="expertise-title">How I can help</h2>
+      <div class="expertise-grid">
+        <article id="imagery-analysis">
+          <h3>Earth observation &amp; GeoAI</h3>
+          <p>I work with optical, hyperspectral and radar imagery, including image classification and imagery-assisted feature extraction. I’ve also contributed to InSAR work on ground subsidence.</p>
+        </article>
+        <article id="interactive-mapping">
+          <h3>Web GIS &amp; data automation</h3>
+          <p>I build map-based review tools and data workflows using Python, GeoPandas, rasterio, PostgreSQL/PostGIS, QGIS and Streamlit.</p>
+        </article>
+        <article id="environmental-gis">
+          <h3>Environmental assessment</h3>
+          <p>I’ve supported field audits, environmental impact assessments and management plans, and produced hazard, heritage and site-suitability maps.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section experience" id="experience" aria-labelledby="experience-title">
+    <div class="wrap">
+      <p class="eyebrow">Background</p>
+      <h2 id="experience-title">Experience &amp; education</h2>
       <div class="experience-grid">
         <div class="timeline">
-          <article><p class="meta">Jul 2026 – Present</p><h3>Innocom Global Geospatial</h3><p>Geospatial Data Scientist and Developer</p></article>
-          <article><p class="meta">Jun 2023 – Jul 2026</p><h3>Sinda Africa</h3><p>Geospatial Data Scientist · Environmental analysis, hazard and site-suitability mapping, and field audits</p></article>
-          <article><p class="meta">May 2022 – Jun 2023</p><h3>Rumdel Cape</h3><p>Land Survey Assistant and SHEQ Officer</p></article>
-          <article><p class="meta">Mar 2020 – Dec 2021</p><h3>University of Fort Hare</h3><p>Assistant Lecturer · Applied Remote Sensing and GIS</p></article>
-          <article><p class="meta">2018</p><h3>Zimbabwe Electricity Supply Authority</h3><p>GIS Officer · Utility data and mobile field mapping</p></article>
-          <article><p class="meta">2015 – 2016</p><h3>City of Harare Municipality</h3><p>GIS Intern / Junior GIS Officer · Municipal mapping and work with LiDAR data</p></article>
+          <article><p class="date">Started July 2026</p><h3>Innocom Global Geospatial</h3><p>Geospatial Data Scientist and Developer</p></article>
+          <article><p class="date">June 2023 – July 2026</p><h3>Sinda Africa</h3><p>Geospatial Data Scientist · environmental analysis, mapping and field audits</p></article>
+          <article id="infrastructure"><p class="date">May 2022 – June 2023</p><h3>Rumdel Cape</h3><p>Land Survey Assistant and SHEQ Officer · roadworks mapping and traffic routing</p></article>
+          <article id="teaching"><p class="date">March 2020 – December 2021</p><h3>University of Fort Hare</h3><p>Assistant Lecturer · Applied Remote Sensing and GIS</p></article>
+          <article><p class="date">2018</p><h3>Zimbabwe Electricity Supply Authority</h3><p>GIS Officer · utility asset mapping with GPS and Survey123</p></article>
+          <article><p class="date">2015 – 2016</p><h3>City of Harare Municipality</h3><p>GIS Intern / Junior GIS Officer · municipal infrastructure mapping and LiDAR data</p></article>
         </div>
-        <div class="toolkit">
-          <article><h3>Spatial data &amp; development</h3><p>I use Python, GeoPandas, Shapely, rasterio and PostgreSQL/PostGIS to process spatial data and automate checks. I build review tools in QGIS and Streamlit and work with ArcGIS Pro and pgRouting.</p></article>
-          <article><h3>Earth observation &amp; field GIS</h3><p>I work with optical, hyperspectral and radar imagery, image classification and SEBAL. My field GIS work includes GPS, Survey123 and LiDAR datasets.</p></article>
-          <article><h3>Education</h3><p><strong>BSc Geography Honours</strong><br>University of Zimbabwe · 2017 · Upper Second Class (2.1)<br>Geographical Information Science and Earth Observation</p><p>Postgraduate research at the University of Fort Hare focused on estimating forest water use with SEBAL.</p></article>
-        </div>
+        <aside class="education">
+          <h3>BSc Geography Honours</h3>
+          <p>University of Zimbabwe · 2017 · Upper Second Class (2.1)<br>Geographical Information Science and Earth Observation</p>
+          <p><strong>Postgraduate research</strong><br>University of Fort Hare · forest water-use estimation using SEBAL</p>
+          <a class="text-link" href="assets/Simbarashe_Mukanganyama_CV.pdf" download>Download CV <span aria-hidden="true">↓</span></a>
+        </aside>
       </div>
     </div>
   </section>
+
   <section class="contact" id="contact" aria-labelledby="contact-title">
-    <div class="wrap contact-inner">
-      <div><h2 id="contact-title">Let’s talk.</h2><p>I’d be glad to hear what your team is working on. I’m open to GIS, remote sensing and geospatial development roles.</p><p class="contact-location">Based in South Africa</p></div>
-      <div class="contact-links"><a class="button light" href="mailto:sbmukanganyama@outlook.com">Email Simbarashe</a><a class="button outline" href="https://www.linkedin.com/in/simbarashemukanganyama/">LinkedIn</a></div>
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">Let’s talk about your geospatial project.</h2>
+        <p>Based in South Africa and open to GIS, Earth observation and geospatial development roles and projects.</p>
+      </div>
+      <div class="actions">
+        <a class="button primary" href="mailto:sbmukanganyama@outlook.com">Email me <span aria-hidden="true">↗</span></a>
+        <a class="button outline" href="https://www.linkedin.com/in/simbarashemukanganyama/">LinkedIn <span aria-hidden="true">↗</span></a>
+      </div>
     </div>
   </section>
 </main>
-<footer><div class="wrap footer"><span>Simbarashe Mukanganyama</span><a href="#top">Back to top</a></div></footer>
+<footer><div class="wrap"><span>Simbarashe Mukanganyama</span><a href="#top">Back to top ↑</a></div></footer>
 <script>
 "use strict";
 
@@ -342,7 +485,6 @@ function checkParcels() {
   return results;
 }
 
-const basemap = new Image();
 let selected = null;
 let flags = new Map();
 
@@ -350,11 +492,6 @@ function drawMap(canvas, issues, active = null) {
   const ctx = canvas.getContext("2d");
   ctx.fillStyle = "#102e35";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  if (basemap.naturalWidth) {
-    ctx.globalAlpha = .4;
-    ctx.drawImage(basemap, 0, 0, canvas.width, canvas.height);
-    ctx.globalAlpha = 1;
-  }
   ctx.lineWidth = 1;
   ctx.strokeStyle = "#9ac4ba22";
   for (let x = 32; x < 660; x += 40) {
@@ -445,8 +582,11 @@ reviewMap.addEventListener("click", event => {
   if (hit) selectParcel(hit);
 });
 
-basemap.addEventListener("load", renderMaps);
-basemap.src = "assets/terrain.webp";
+document.querySelector("[data-open-demo]").addEventListener("click", () => {
+  const disclosure = document.querySelector(".demo-disclosure");
+  disclosure.open = true;
+  disclosure.querySelector("summary").focus({ preventScroll: true });
+});
 renderMaps();
 </script>
 </body>
